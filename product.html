@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>AUREL — Product</title><link rel="stylesheet" href="style.css"></head><body><div class="grain"></div>
+<header class="nav" id="nav"><a class="brand" href="index.html">AUREL<span>®</span></a><nav><a href="index.html">Home</a><a class="active" href="collection.html">Collection</a><a href="technology.html">Technology</a><a href="experience.html">Experience</a><a href="story.html">Story</a></nav><a class="nav-cta" href="collection.html">All models →</a><button class="menu">☰</button></header>
+<main id="productPage"></main>
+<footer><span>AUREL®</span><span>PRECISION / SOUND / EMOTION</span><span><a href="collection.html">BACK TO COLLECTION →</a></span></footer>
+<script>
+const products={
+"noir-one":{name:"NOIR ONE",type:"FLAGSHIP / OVER-EAR",price:"₹29,990",tag:"Adaptive wireless headphones",desc:"A quiet, powerful flagship tuned for deep listening.",art:"headphone-art",specs:["40 mm custom dynamic driver","Adaptive active noise cancellation","Up to 40 hours battery","Bluetooth / Hi-Res capable","Aluminium / memory foam"]},
+"halo-x":{name:"HALO X",type:"SPATIAL / OVER-EAR",price:"₹34,990",tag:"Immersive wireless headphones",desc:"A wider soundstage for cinematic listening.",art:"headphone-art silver",specs:["50 mm spatial driver","Immersive spatial processing","Up to 45 hours battery","Low-latency wireless mode","Precision aluminium frame"]},
+"sonic-r2":{name:"SONIC R2",type:"STUDIO / CLOSED-BACK",price:"₹24,990",tag:"Reference studio headphones",desc:"A controlled reference platform for creators.",art:"headphone-art bronze",specs:["45 mm reference driver","Closed-back acoustic chamber","Detachable cable","Low distortion tuning","Studio-focused response"]},
+"arc-one":{name:"ARC ONE",type:"DESKTOP / OPEN-BACK",price:"₹39,990",tag:"Open-back listening",desc:"An expansive desktop listening experience.",art:"headphone-art white",specs:["50 mm open-back driver","Wide natural soundstage","Premium metal yokes","High-resolution wired","Designed for home listening"]},
+"air-neo":{name:"AIR NEO",type:"LIGHTWEIGHT / WIRELESS",price:"₹19,990",tag:"Everyday wireless",desc:"Light enough to disappear into your day.",art:"headphone-art graphite",specs:["40 mm dynamic driver","245 g construction","Up to 50 hours battery","Adaptive EQ","Foldable travel design"]},
+"veil-pro":{name:"VEIL PRO",type:"TRUE WIRELESS / ANC",price:"₹14,990",tag:"True wireless earphones",desc:"Compact, immersive and intelligently quiet.",art:"buds-art",specs:["Dual-driver architecture","Adaptive ANC","Hi-Res wireless","Up to 32 hours with case","Wireless charging case"]},
+"arc-air":{name:"ARC AIR",type:"OPEN FIT / SPATIAL",price:"₹11,990",tag:"Open-fit earphones",desc:"Airy listening without closing you off from the world.",art:"buds-art clear",specs:["Open-fit acoustic design","Spatial processing","Up to 28 hours","Touch controls","Low-latency mode"]},
+"core-mini":{name:"CORE MINI",type:"COMPACT / EVERYDAY",price:"₹7,990",tag:"Compact true wireless",desc:"Small footprint. Full AUREL character.",art:"buds-art dark",specs:["10 mm dynamic driver","Active noise cancellation","Up to 30 hours","Pocket charging case","IP-rated everyday design"]},
+"sonora":{name:"SONORA",type:"WIRELESS / HOME",price:"₹21,990",tag:"360° home speaker",desc:"Room-filling sound in a sculptural form.",art:"speaker-art",specs:["360° acoustic dispersion","Wi-Fi + Bluetooth","Multi-room ready","Adaptive room tuning","Premium enclosure"]},
+"sonora-mini":{name:"SONORA MINI",type:"COMPACT / DESKTOP",price:"₹12,990",tag:"Compact wireless speaker",desc:"A small speaker with a surprisingly large field.",art:"speaker-art mini",specs:["360° sound","Bluetooth","Desktop optimized","USB-C power","Compact enclosure"]}
+};
+const id=new URLSearchParams(location.search).get("id")||"noir-one";const p=products[id]||products["noir-one"];
+document.title="AUREL — "+p.name;
+document.getElementById("productPage").innerHTML=`
+<section class="product-detail"><div class="detail-art"><div class="product-orb"></div><div class="model-art ${p.art}"><span>${p.name.split(" ")[0]}</span></div></div>
+<div class="detail-copy"><span class="section-label">${p.type}</span><h1>${p.name}</h1><h3>${p.tag}</h3><p>${p.desc}</p><strong class="price">${p.price}</strong><div class="detail-actions"><a class="button light" href="contact.html">Enquire about model</a><a class="text-link" href="collection.html">← All models</a></div><div class="detail-specs">${p.specs.map((s,i)=>`<p><span>0${i+1}</span>${s}</p>`).join("")}</div></div></section>`;
+</script><script src="app.js"></script></body></html>
